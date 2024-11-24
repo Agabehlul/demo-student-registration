@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tələbə Qeydiyyat Sistemi</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Stylesheeti əlavə edirik -->
+</head>
+<body>
+<div class="container">
+  <h1>Tələbə Qeydiyyat Sistemi</h1>
+
+  <!-- Flexbox ilə iki sütunlu düzülüş -->
+  <div class="content-wrapper">
+
+    <!-- Tələbə əlavə etmək üçün form -->
+    <div class="form-container">
+      <h2>Tələbə Əlavə Et</h2>
+      <form id="student-form">
+        <div class="input-group">
+          <label for="name">Ad</label>
+          <input type="text" id="name" placeholder="Tələbənin adını daxil edin" required>
+        </div>
+        <div class="input-group">
+          <label for="surname">Soyad</label>
+          <input type="text" id="surname" placeholder="Tələbənin soyadını daxil edin" required>
+        </div>
+        <div class="input-group">
+          <label for="birthdate">Doğum Tarixi</label>
+          <input type="date" id="birthdate" required>
+        </div>
+        <div class="input-group">
+          <label for="city">Şəhər</label>
+          <input type="text" id="city" placeholder="Tələbənin şəhərini daxil edin" required>
+        </div>
+        <div class="input-group">
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="true">Aktiv</option>
+            <option value="false">Passiv</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Əlavə et</button>
+      </form>
+    </div>
+
+    <!-- Tələbə siyahısı cədvəli -->
+    <div class="student-list-container">
+      <h2>Əlavə edilmiş Tələbələr</h2>
+      <table id="student-table">
+        <thead>
+        <tr>
+          <th>Ad</th>
+          <th>Soyad</th>
+          <th>Doğum Tarixi</th>
+          <th>Şəhər</th>
+          <th>Status</th>
+          <th>Əməliyyatlar</th>
+        </tr>
+        </thead>
+        <tbody id="student-list">
+        <!-- Tələbə siyahısı burada göstəriləcək -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Yeniləmə formu -->
+  <div id="update-form" style="display: none;">
+    <h2>Tələbə Məlumatlarını Yenilə</h2>
+    <form id="update-student-form">
+      <div class="input-group">
+        <label for="update-name">Ad</label>
+        <input type="text" id="update-name" placeholder="Yeni ad daxil edin" required>
+      </div>
+      <div class="input-group">
+        <label for="update-surname">Soyad</label>
+        <input type="text" id="update-surname" placeholder="Yeni soyad daxil edin" required>
+      </div>
+      <div class="input-group">
+        <label for="update-birthdate">Doğum Tarixi</label>
+        <input type="date" id="update-birthdate" required>
+      </div>
+      <div class="input-group">
+        <label for="update-city">Şəhər</label>
+        <input type="text" id="update-city" placeholder="Yeni şəhər daxil edin" required>
+      </div>
+      <div class="input-group">
+        <label for="update-status">Status</label>
+        <select id="update-status">
+          <option value="true">Aktiv</option>
+          <option value="false">Passiv</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Yenilə</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
